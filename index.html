@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kindle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <!-- Экран входа -->
+        <div id="loginScreen" class="screen active">
+            <div class="login-content">
+                <svg class="logo" width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 60L40 30L60 60H20Z" fill="#2F855A"/>
+                    <path d="M25 55L40 35L55 55H25Z" fill="#38A169"/>
+                    <circle cx="40" cy="25" r="5" fill="#68D391"/>
+                </svg>
+                <h1>Kindle</h1>
+                <input type="email" placeholder="Email" id="emailInput">
+                <input type="password" placeholder="Пароль" id="passwordInput">
+                <button id="loginBtn">Войти</button>
+                <p>Нет аккаунта? <a href="#" id="registerLink">Зарегистрироваться</a></p>
+            </div>
+        </div>
+
+        <!-- Главный экран -->
+        <div id="homeScreen" class="screen">
+            <header>
+                <h2>Добро пожаловать, <span id="welcomeName">Гость</span></h2>
+                <button id="themeToggle"><i class="fas fa-moon"></i></button>
+            </header>
+            <div class="stats">
+                <p><i class="fas fa-tasks"></i> Активных: <span id="taskCount">0</span></p>
+                <p><i class="fas fa-coins"></i> Бонусы: <span id="bonusCountHome">0</span></p>
+            </div>
+            <div class="progress-bar"><div id="progressFill"></div></div>
+            <div class="filter">
+                <select id="taskFilter">
+                    <option value="all">Все задания</option>
+                    <option value="active">Активные</option>
+                    <option value="completed">Выполненные</option>
+                </select>
+            </div>
+            <div id="taskList" class="task-list"></div>
+            <nav class="bottom-nav">
+                <button id="homeNav" class="active"><i class="fas fa-home"></i></button>
+                <button id="tasksNav"><i class="fas fa-tasks"></i></button>
+                <button id="profileNav"><i class="fas fa-user"></i></button>
+            </nav>
+        </div>
+
+        <!-- Экран задания -->
+        <div id="taskDetailScreen" class="screen">
+            <div id="taskDetailContent"></div>
+            <button onclick="showScreen('homeScreen')">Назад</button>
+            <button id="acceptTaskBtn">Принять задание</button>
+        </div>
+
+        <!-- Личный кабинет -->
+        <div id="profileScreen" class="screen">
+            <h2>Личный кабинет</h2>
+            <div class="profile-info">
+                <img src="https://via.placeholder.com/120" alt="Avatar" class="avatar">
+                <p><i class="fas fa-user"></i> Имя: <span id="profileName">Не указано</span></p>
+                <p><i class="fas fa-coins"></i> Бонусы: <span id="bonusCount">0</span></p>
+                <h3>История заданий</h3>
+                <ul id="historyList"></ul>
+                <button id="editProfileBtn">Редактировать профиль</button>
+                <button id="logoutBtn">Выйти</button>
+            </div>
+        </div>
+
+        <!-- Экран бонусов -->
+        <div id="bonusScreen" class="screen">
+            <h2>Магазин бонусов</h2>
+            <div id="bonusList" class="bonus-list"></div>
+        </div>
+
+        <!-- Уведомление -->
+        <div id="notification" class="notification"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

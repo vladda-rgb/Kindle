@@ -1,0 +1,433 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #e6f0ea, #c6d7c8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background 0.5s ease;
+}
+
+body.dark-theme {
+    background: linear-gradient(135deg, #2d3748, #1a202c);
+}
+
+.mobile-container {
+    width: 393px;
+    height: 852px;
+    background: #ffffff;
+    border-radius: 40px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    position: relative;
+}
+
+.screen {
+    display: none;
+    height: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    animation: slideIn 0.4s ease;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Экран входа */
+.login-content {
+    text-align: center;
+    padding-top: 80px;
+}
+
+.logo {
+    margin-bottom: 25px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.login-content h1 {
+    font-size: 2.5em;
+    color: #2f855a;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    display: block;
+    width: 85%;
+    margin: 20px auto;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background: #f7fafc;
+    font-size: 1em;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-theme input {
+    background: #4a5568;
+    color: #e2e8f0;
+}
+
+#loginBtn {
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #38a169, #68d391);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#loginBtn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#registerLink {
+    color: #38a169;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Главный экран */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h2 {
+    font-size: 1.8em;
+    color: #2d3748;
+    margin: 0;
+}
+
+body.dark-theme header h2 {
+    color: #e2e8f0;
+}
+
+#themeToggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #2f855a;
+    cursor: pointer;
+}
+
+body.dark-theme #themeToggle {
+    color: #68d391;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+body.dark-theme .stats {
+    background: #2d3748;
+    color: #e2e8f0;
+}
+
+.stats p {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.stats i {
+    margin-right: 8px;
+    color: #38a169;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e6f0ea;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+body.dark-theme .progress-bar {
+    background: #4a5568;
+}
+
+#progressFill {
+    height: 100%;
+    background: linear-gradient(135deg, #38a169, #68d391);
+    width: 0;
+    transition: width 0.5s ease;
+}
+
+.filter select {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: white;
+    font-size: 1em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+body.dark-theme .filter select {
+    background: #2d3748;
+    color: #e2e8f0;
+}
+
+.task-list {
+    height: 550px;
+    overflow-y: auto;
+}
+
+.task-card {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+body.dark-theme .task-card {
+    background: #2d3748;
+}
+
+.task-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.task-card h3 {
+    margin: 0;
+    font-size: 1.3em;
+    color: #2d3748;
+}
+
+body.dark-theme .task-card h3 {
+    color: #e2e8f0;
+}
+
+.task-card p {
+    margin: 8px 0;
+    color: #718096;
+}
+
+.task-card .bonus {
+    color: #38a169;
+    font-weight: bold;
+}
+
+.bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    background: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0.8));
+    border-top: 1px solid #c6d7c8;
+}
+
+body.dark-theme .bottom-nav {
+    background: linear-gradient(to top, #2d3748, rgba(45, 55, 72, 0.8));
+}
+
+.bottom-nav button {
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: #a0aec0;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.bottom-nav button.active {
+    color: #2f855a;
+    transform: scale(1.2);
+}
+
+body.dark-theme .bottom-nav button.active {
+    color: #68d391;
+}
+
+/* Экран задания */
+#taskDetailContent {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme #taskDetailContent {
+    background: #2d3748;
+    color: #e2e8f0;
+}
+
+#acceptTaskBtn {
+    display: block;
+    margin: 25px auto;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #38a169, #68d391);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#acceptTaskBtn:hover {
+    transform: scale(1.05);
+}
+
+/* Личный кабинет */
+.profile-info {
+    text-align: center;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .profile-info {
+    background: #2d3748;
+    color: #e2e8f0;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 25px auto;
+    border: 4px solid #38a169;
+}
+
+.profile-info p {
+    font-size: 1.3em;
+    color: #2d3748;
+    margin: 20px 0;
+}
+
+body.dark-theme .profile-info p {
+    color: #e2e8f0;
+}
+
+.profile-info p i {
+    margin-right: 10px;
+    color: #2f855a;
+}
+
+body.dark-theme .profile-info i {
+    color: #68d391;
+}
+
+#historyList {
+    list-style: none;
+    padding: 0;
+}
+
+#historyList li {
+    background: #e6f0ea;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-theme #historyList li {
+    background: #4a5568;
+}
+
+#editProfileBtn, #logoutBtn {
+    padding: 12px 25px;
+    margin: 15px 0;
+    background: linear-gradient(135deg, #2f855a, #68d391);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#logoutBtn {
+    background: linear-gradient(135deg, #744210, #975a16);
+}
+
+#editProfileBtn:hover, #logoutBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Экран бонусов */
+.bonus-list .bonus-item {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+body.dark-theme .bonus-list .bonus-item {
+    background: #2d3748;
+}
+
+.bonus-item:hover {
+    transform: translateY(-5px);
+}
+
+.bonus-item button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #744210, #975a16);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.bonus-item button:hover {
+    transform: scale(1.05);
+}
+
+/* Уведомление */
+.notification {
+    position: absolute;
+    bottom: 100px;
+    right: 20px;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #38a169, #68d391);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    display: none;
+    animation: slideInRight 0.5s ease;
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
