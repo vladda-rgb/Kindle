@@ -1,0 +1,54 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Kindle App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Волонтер Kindle</h1>
+            <nav>
+                <button id="homeBtn">Главная</button>
+                <button id="tasksBtn">Задачи</button>
+                <button id="profileBtn">Профиль</button>
+            </nav>
+        </header>
+
+        <main>
+            <section id="home" class="page active">
+                <h2>Добро пожаловать</h2>
+                <p>Присоединяйтесь к волонтерскому движению!</p>
+                <div class="stats">
+                    <div>Активных задач: <span id="taskCount">0</span></div>
+                    <div>Волонтеров: <span id="volunteerCount">0</span></div>
+                </div>
+            </section>
+
+            <section id="tasks" class="page">
+                <h2>Доступные задачи</h2>
+                <ul id="taskList">
+                    <!-- Задачи будут добавляться через JS -->
+                </ul>
+                <button id="addTask">Добавить задачу</button>
+            </section>
+
+            <section id="profile" class="page">
+                <h2>Ваш профиль</h2>
+                <div class="profile-info">
+                    <p>Имя: <span id="userName">Не указано</span></p>
+                    <p>Выполнено задач: <span id="completedTasks">0</span></p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Volunteer Kindle</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
